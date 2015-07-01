@@ -42,13 +42,13 @@ int letterFill(char guess, string secretword, string &guessword){
 
 int main(){
 	int tries = 0;
-	int maxTries = 5;
+    int maxTries = 6;
 	string letter = "";
 	string word = randomWord();
 	string unknown(word.length(), '_');
 	cout << "Welcome to hangman mang!" << endl;
 	cout << "Random word has been generated! Word is " << word.length() << " letters long!" << endl;
-	while (tries < 6){
+	while (tries < maxTries){
 		cout << unknown;
         char letter = cin.get();
 		if (letterFill(letter, word, unknown) == 0){
@@ -68,10 +68,8 @@ int main(){
 			break;
 		}
 	}
-	if (tries == maxTries)
-	{
-		cout << endl << "Sorry, you lose...you've been hanged." << endl;
-		cout << "The word was : " << word << endl;
+	cout << endl << "Sorry, you lose...you've been hanged." << endl;
+	cout << "The word was : " << word << endl;
 	}
 	cin.ignore();
 
