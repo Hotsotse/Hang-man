@@ -1,7 +1,7 @@
 SRCS := $(wildcard src/*.cpp)
 OBJS := $(addprefix bin/,$(notdir $(SRCS:.cpp=.o)))
 CC = g++
-DEBUG = -g
+DEBUG = -g -std=c++11
 CFLAGS = -Wall -I include/ -c $(DEBUG)
 LFLAGS = -Wall -I include/ $(DEBUG)
 
