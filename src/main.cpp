@@ -1,8 +1,13 @@
 #include <iostream>
 #include <string>
-#include <stdlib.h>
+#include <random>
 
 using namespace std;
+int random(int a, int b){
+    thread_local mt19937 eng{random_device{}()};
+    uniform_int_distribution<int> dist(a, b);
+    return dist(eng);
+}
 
 string randomWord(){
 	string words[] = {
@@ -17,7 +22,8 @@ string randomWord(){
 		"Oman",
 		"Indonesia"
 	};
-	return words[rand() % 9];
+    cout << random(0, 9);
+	return words[random(0, 9)];
 }
 
 int letterFill(char guess, string secretword, string &guessword){
