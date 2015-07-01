@@ -5,7 +5,7 @@ DEBUG = -g
 CFLAGS = -Wall -I include/ -c $(DEBUG)
 LFLAGS = -Wall -I include/ $(DEBUG)
 
-game : $(OBJS)
+hangman : $(OBJS)
 	$(CC) $(LFLAGS) -o bin/$@ $^
 
 bin/%.o : src/%.cpp
