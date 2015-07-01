@@ -17,8 +17,7 @@ string randomWord(){
 		"Oman",
 		"Indonesia"
 	};
-	string word = words[rand() % 9];
-	return word;
+	return words[rand() % 9];
 }
 
 int letterFill(char guess, string secretword, string &guessword){
@@ -48,7 +47,7 @@ int main(){
 	cout << "Welcome to hangman mang!" << endl;
 	cout << "Random word has been generated! Word is " << word.length() << " letters long!" << endl;
 	while (tries > 0){
-		cout << unknown;
+		cout << unknown << endl;
         char letter = cin.get();
 		if (letterFill(letter, word, unknown) == 0){
 			cout << "Could not find " << letter << " in the word." << endl;
