@@ -68,7 +68,7 @@ int main(){
 		{
 			cout << word << endl;
 			cout << "Yeah! You got it!";
-			break;
+            return 0;
 		}
 	}
 	cout << endl << "Sorry, you lose...you've been hanged." << endl;
@@ -77,4 +77,3 @@ int main(){
 
 	return 0;
 }
-
