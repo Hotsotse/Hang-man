@@ -45,7 +45,7 @@ int main(){
 	int maxTries = 5;
 	string letter = "";
 	string word = randomWord();
-	string unknown(word.length(), '*');
+	string unknown(word.length(), '_');
 	cout << "Welcome to hangman mang!" << endl;
 	cout << "Random word has been generated! Word is " << word.length() << " letters long!" << endl;
 	while (tries < 6){
@@ -74,7 +74,6 @@ int main(){
 		cout << "The word was : " << word << endl;
 	}
 	cin.ignore();
-	cin.get();
 
 	return 0;
 }
