@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -20,20 +21,17 @@ string randomWord(){
 	return word;
 }
 
-int letterFill(string guess, string secretword, string &guessword){
+int letterFill(char guess, string secretword, string &guessword){
     int i;
-
     int matches=0;
-
     int len=secretword.length();
 
     for (i = 0; i< len; i++)
     {
-
         // Did we already match this letter in a previous guess?
         if (guess == guessword[i]) return 0;
 
-    // Is the guess in the secret word?
+        // Is the guess in the secret word?
         if (guess == secretword[i]){
             guessword[i] = guess;
             matches++;
@@ -43,25 +41,25 @@ int letterFill(string guess, string secretword, string &guessword){
 }
 
 int main(){
-	int TRIES = 0;
-	int MAX_TRIES = 5;
+	int tries = 0;
+	int maxTries = 5;
 	string letter = "";
 	string word = randomWord();
 	string unknown(word.length(), '*');
 	cout << "Welcome to hangman mang!" << endl;
 	cout << "Random word has been generated! Word is " << word.length() << " letters long!" << endl;
-	while (TRIES < 6){
+	while (tries < 6){
 		cout << unknown;
-		getline(cin, letter);
+        char letter = cin.get();
 		if (letterFill(letter, word, unknown) == 0){
 			cout << "Could not find " << letter << " in the word." << endl;
-			TRIES++;
+			tries++;
 		}
 		else {
 			cout << "Found letter! " << endl;
 		}
 
-		cout << "Guess a letter, you have " << TRIES << " left." << endl;
+		cout << "Guess a letter, you have " << tries << " left." << endl;
 
 		if (word == unknown)
 		{
@@ -70,9 +68,9 @@ int main(){
 			break;
 		}
 	}
-	if (TRIES == MAX_TRIES)
+	if (tries == maxTries)
 	{
-		cout << "\nSorry, you lose...you've been hanged." << endl;
+		cout << endl << "Sorry, you lose...you've been hanged." << endl;
 		cout << "The word was : " << word << endl;
 	}
 	cin.ignore();
