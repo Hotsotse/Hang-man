@@ -1,2 +1,2 @@
 # Hang-man
-A very broken C++ hangman game.
+A simple hangman game.
