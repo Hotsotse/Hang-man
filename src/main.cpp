@@ -9,6 +9,12 @@ int random(int a, int b){
     return dist(eng);
 }
 
+
+/* I tried not to mess up code too much as I could not manage to generate files with makefile on VS! Please try out and run the game to check if the commit is fine.
+it most probably is ,but I dont want to risk to mess to many things up! I did mention removing using namespace for the project,but I was unable to do so due to the random
+function above causing trouble,and me being unable to see the whole code.... I hope that at least adding many more countries can add variery to the game ( I excluded any country
+that has 2+ word names to avoid bugs
+-aleks               */
 string randomWord() {
 	string words[] = {
 		"Afghanistan",
