@@ -53,7 +53,8 @@ int main(){
 	cout << "Random word has been generated! Word is " << word.length() << " letters long!" << endl;
 	while (tries > 0){
 		cout << unknown << endl;
-        char letter = cin.get();
+        	char letter; 
+		cin >> letter;	
 		if (letterFill(letter, word, unknown) == 0){
 			cout << "Could not find " << letter << " in the word." << endl;
 			tries--;
